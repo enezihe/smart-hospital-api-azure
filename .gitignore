@@ -1,0 +1,13 @@
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+# Local DB & env
+hospital.db
+.env
+
+# OS/IDE
+.DS_Store
+.idea/
+.vscode/
