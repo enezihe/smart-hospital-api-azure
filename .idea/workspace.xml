@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4659e5a7-c889-4fed-bf4f-1ff96900face" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/smart-hospital-api-azure.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/smart-hospital-api-azure.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/azure-webapp.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/api_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/api_v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/instance/hospital.db" beforeDir="false" afterPath="$PROJECT_DIR$/instance/hospital.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/wsgi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1755114469809</updated>
-      <workItem from="1755114470829" duration="5970000" />
+      <workItem from="1755114470829" duration="6952000" />
     </task>
     <servers />
   </component>

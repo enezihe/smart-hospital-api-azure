@@ -1,0 +1,55 @@
+name: Deploy Smart Hospital API to Azure Web App
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AZURE_WEBAPP_NAME: smart-hospital-api-webapp
+  AZURE_WEBAPP_PACKAGE_PATH: .
+  PYTHON_VERSION: "3.10"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install deps (optional local build)
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run pytest smoke (optional)
+        run: |
+          if [ -d tests ]; then pytest -q; else echo "No tests directory, skipping."; fi
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Smoke test /health (post-deploy)
+        run: |
+          URL="https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net/health"
+          echo "GET $URL"
+          code=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+          if [ "$code" != "200" ]; then
+            echo "Health failed with HTTP $code"
+            exit 1
+          fi
+          echo "Health OK"
