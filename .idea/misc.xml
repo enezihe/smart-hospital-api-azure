@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.9 (smart-hospital-api-azure)" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (smart-hospital-api-azure) (2)" project-jdk-type="Python SDK" />
 </project>

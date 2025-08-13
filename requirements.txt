@@ -4,3 +4,4 @@ python-dotenv
 flask-sqlalchemy
 marshmallow
 gunicorn
+gunicorn>=21.2

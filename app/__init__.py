@@ -1,3 +1,4 @@
+# app/__init__.py
 from flask import Flask, request
 from dotenv import load_dotenv
 from .extensions import db, cors
@@ -8,6 +9,7 @@ def create_app(config_class: type = Config) -> Flask:
     app = Flask(__name__)
     app.config.from_object(config_class)
 
+    # init extensions
     db.init_app(app)
     cors.init_app(app)
 
